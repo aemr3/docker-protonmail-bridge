@@ -14,8 +14,6 @@ RUN apt-get update && \
 
 FROM debian:12
 
-WORKDIR /home/proton
-
 RUN \
   apt-get update && \
   apt-get install -y --no-install-recommends pass libsecret-1-0 ca-certificates && \
@@ -23,6 +21,8 @@ RUN \
   addgroup --system --gid 1001 proton && \
   adduser --home /home/proton --system --uid 1001 proton && \
   chown proton:proton /home/proton
+
+WORKDIR /home/proton
 
 COPY --from=build /build/proton-bridge/bridge /usr/bin/
 COPY --from=build /build/proton-bridge/proton-bridge /usr/bin/
