@@ -19,7 +19,7 @@ RUN \
   apt-get install -y --no-install-recommends pass libsecret-1-0 ca-certificates && \
   rm -rf /var/lib/apt/lists/* && \
   addgroup --system --gid 1001 proton && \
-  adduser --home /home/proton --system --uid 1001 proton && \
+  adduser --home /home/proton --system --uid 1001 --gid 1001 proton && \
   chown proton:proton /home/proton
 
 WORKDIR /home/proton
