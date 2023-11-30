@@ -29,6 +29,6 @@ COPY --from=build /build/proton-bridge/proton-bridge /usr/bin/
 
 EXPOSE 1025 1143
 
-USER protonmail
+USER proton
 
 ENTRYPOINT ["proton-bridge"]
