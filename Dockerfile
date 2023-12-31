@@ -1,6 +1,6 @@
 FROM golang:1.21 AS build
 
-ARG VERSION=3.6.1
+ARG VERSION=3.7.1
 
 WORKDIR /build
 
